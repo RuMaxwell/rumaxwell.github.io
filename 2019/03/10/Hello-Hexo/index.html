@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Hello, Hexo! - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/">
+        </div>
+        <div class="name">
+            <i>Ruthenium Maxwell</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-Hexo"><span class="toc-text">Hello, Hexo!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载-Hexo"><span class="toc-text">下载 Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化博客"><span class="toc-text">初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载主题"><span class="toc-text">下载主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-git-ssh"><span class="toc-text">配置 git ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署博客"><span class="toc-text">部署博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从今开始"><span class="toc-text">从今开始</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Hello, Hexo!
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-10 22:09:54</span></span>
+        
+        
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello, Hexo!"></a>Hello, Hexo!</h1><p>GitHub Pages + Hexo 搭建博客的历程并不算艰辛……相比 Android Studio 的安装配置来说。途中还是遇到不少问题，现同搭建过程中的重点步骤一并呈现。</p>
+<a id="more"></a>
+<h2 id="下载-Hexo"><a href="#下载-Hexo" class="headerlink" title="下载 Hexo"></a>下载 Hexo</h2><p>由于众所周知的原因，使用原镜像 <code>npm install</code> 会非常缓慢。所以我首先切换了 npm 源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set registry &quot;https://registry.npm.taobao.org/&quot;</span><br></pre></td></tr></table></figure>
+<p>然后 <code>npm install -g hexo-cli</code>。</p>
+<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>然而真正的缓慢现在才开始。因为 <code>hexo init</code> 获取 <code>themes</code> 需要 clone GitHub 的 repo。而 GitHub 无法通过设置镜像的方式加速。所以我上了 VPN（其实还是一卡一卡的 (′д｀ )…彡）。</p>
+<p>完成之后，在新目录中执行 <code>npm install</code>。至此，整个初始化完成。</p>
+<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><p><code>https://hexo.io/themes/</code> 中的主题可谓非常之多，我从 A 看到 H 就失去了耐心。但此时我已打开十几个比较喜欢的主题的链接。我一开始点网站中的图片，进的是其他人的博客，在里面疯狂找主题链接……后来发现点标题可以链接到主题的 repo。<code>git clone</code> 了一波，然后按教程配置了主题。</p>
+<h2 id="配置-git-ssh"><a href="#配置-git-ssh" class="headerlink" title="配置 git ssh"></a>配置 git ssh</h2><p>按网上教程配置 git ssh。遇到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (xxx.xxx.xxx.xxx)&apos; can&apos;t be established.</span><br></pre></td></tr></table></figure>
+<p>这个错误，搜了一下发现新建 ssh 缺少 <code>known_hosts</code> 文件，回答 yes 就行，无伤大雅。</p>
+<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><p>在 <code>_config.yml</code> 配置了 <code>deploy</code>。到此为止已经万事俱备，<code>hexo d</code> 完成。</p>
+<h2 id="从今开始"><a href="#从今开始" class="headerlink" title="从今开始"></a>从今开始</h2><p>很愉快，从今以后我可以开始在自己的博客中写东西了。不过近期还需完成这几件事：</p>
+<ol>
+<li>购买域名</li>
+<li>购买服务器搭建后台</li>
+<li>将 GitHub Pages + Hexo 迁移到服务器上</li>
+</ol>
+<p>主要是为了学学后端开发，而且也很想要一个自己的域名。如果 GitHub Student Pack 能申成，域名和服务器就可以靠 Pack 中的优惠获得了。</p>
+<p><strong>Have a Ruthastic day!</strong></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
