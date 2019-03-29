@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#导入音频"><span class="toc-text">导入音频</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#导入音频"><span class="toc-text">导入音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剪辑音频"><span class="toc-text">剪辑音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#淡出效果"><span class="toc-text">淡出效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#确定时间"><span class="toc-text">确定时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存和导出"><span class="toc-text">保存和导出</span></a></li></ol>
 </div>
     
 </div>
@@ -140,7 +140,67 @@
         <p>我经常会遇到需要剪辑音频的情况，比如需要缩减伴奏时长、拼接两首歌等等。本文是使用 FL Studio 12 剪辑音频的简单教程。</p>
 <p>本文假设你已经安装了已注册的 FL Studio 12。</p>
 <h2 id="导入音频"><a href="#导入音频" class="headerlink" title="导入音频"></a>导入音频</h2><p>接下来使用 Audio Clip 插件导入音频。</p>
-<p>首先，点击这里的“+”号。<br><img src="/img/001.png"></p>
+<p>1  打开软件，界面大致是这样的（<strong>这个界面是第 6 步完成后的</strong>）：</p>
+<p><img src="/img/fl-studio/000.png"></p>
+<p>2  点击这里的 + 号：</p>
+<p><img src="/img/fl-studio/001.png"></p>
+<p>3  在弹出菜单中选择「Misc」下的「Audio Clip」插件：</p>
+<p><img src="/img/fl-studio/002.png"></p>
+<p>4  点击后，在「Channels」界面应当出现一个「Audio Clip」的图标，点击它：</p>
+<p><img src="/img/fl-studio/003.png"></p>
+<p>5  点击后，在弹出窗口中点击文件夹图标：</p>
+<p><img src="/img/fl-studio/004.png"></p>
+<p>6  选择你的音频文件。在这里以 Ed Sheeran 的《Perfect》为例。</p>
+<p><img src="/img/fl-studio/005.png"></p>
+<h2 id="剪辑音频"><a href="#剪辑音频" class="headerlink" title="剪辑音频"></a>剪辑音频</h2><p>7  移动鼠标到右边的「音轨」界面：</p>
+<p><img src="/img/fl-studio/006.png"></p>
+<p>8  请注意不要改变上面的 Pattern（图中数字 2），点击音轨工具栏中的「刷子」图标（图中数字 1），并点击第一个音轨的空白区域：</p>
+<p><img src="/img/fl-studio/007.png"></p>
+<p>9  在出现的音频剪辑上按住鼠标左右拖动，使其对准音轨开头（第一小节）。</p>
+<p>10  按住「Ctrl」（或 Mac 电脑的 Command）键，滑动鼠标滚轮，可以缩短/伸长横向密度（即时间密度）：</p>
+<p><img src="/img/fl-studio/008.png"></p>
+<p>11  请注意此处的“吸铁石”，这是「贴紧」选项，意思是要让音频剪辑对准什么样的地方。点开以后可以看到「Line」「Cell」，各种「Step」、各种「Beat」和「Bar」，分别代表对齐纵线、小格子、小格子的 1/n、一拍的 1/n 及整小节。对齐方式决定在拖动音频剪辑时<strong>必须</strong>对准什么样的东西。一般而言，导入的音频很难与音轨的节拍对齐，所以我们选择一个比较小的对齐单位。这里用了最小对齐单位「1/6 step」。如果想要不对齐任何东西，获得最大的灵活度，可选择「(none)」。但这样可能导致无法很好地拼合两个音频。</p>
+<p><img src="/img/fl-studio/009.png"></p>
+<p>12  之后，在音轨工具栏中选择「Slice」（分割）工具。我们用它将音频剪辑分段：</p>
+<p><img src="/img/fl-studio/010.png"></p>
+<p>13  用这个工具在你想要分割的地方从上到下拖动。为了找到需要分割的地方，需要用鼠标点击图中橙色圈出处。那里会出现一个绿色的箭头。这时按空格会从这里开始播放音频，再按空格可以暂停。你可以任意点击「时间轴」上的地方，从任意地方开始播放音频。绿色小箭头可以拖动。找到需要分割的地方后，按空格暂停，用「分割」工具从上到下划动，就可以将音频分成两段。这时你可以看到这个音轨出现了两个名字相同的音频剪辑：</p>
+<p><img src="/img/fl-studio/011.png"></p>
+<p>14  换回「刷子」工具，左右拖动音频剪辑，可以将它们在时间上分开：</p>
+<p><img src="/img/fl-studio/012.png"></p>
+<p>15  用「分割」工具再进行一次分割，接下来我们将抛弃这部分音频：</p>
+<p><img src="/img/fl-studio/013.png"></p>
+<p>16  将中间的音频剪辑向下拖动一个音轨，将其分离开，然后点击音轨左边的绿色小点，可将该音轨静音。静音后该音轨上的音频便不会播放，你可以按空格试听：</p>
+<p><img src="/img/fl-studio/014.png"></p>
+<p><img src="/img/fl-studio/015.png"></p>
+<p>17  为了将前后两部分我们需要的音频拼到一起，我们将后一部分拖近，然后横向放大，小心对齐两个音频：</p>
+<p><img src="/img/fl-studio/016.png"></p>
+<h2 id="淡出效果"><a href="#淡出效果" class="headerlink" title="淡出效果"></a>淡出效果</h2><p>18  接下来我们做一个淡出效果，<strong>双击</strong>「Channels」界面当前「乐器」（也就是《Perfect》的「Audio Clip」）左边的频道按钮，<code>---</code> 表示主频道。：</p>
+<p><img src="/img/fl-studio/017.png"></p>
+<p>19  在打开的窗口中<strong>右键单击</strong>「音量条」的「音量调节按钮」:</p>
+<p><img src="/img/fl-studio/018.png"></p>
+<p>20  在打开的菜单中选择「Create Automation Clip」（创建音量控制剪辑）：</p>
+<p><img src="/img/fl-studio/019.png"></p>
+<p>21  关闭「频道」窗口，回到「音轨」界面，发现第三个音轨多了一个音量控制剪辑（Volume Envelope），确保它在一个没有被静音的音轨上：</p>
+<p><img src="/img/fl-studio/020.png"></p>
+<p>22  拖到需要淡出的位置（以结尾为例），用<strong>右键</strong>单击控制线上要开始减弱的地方：</p>
+<p><img src="/img/fl-studio/021.png"></p>
+<p>23  右击后，会出现一个控制点：</p>
+<p><img src="/img/fl-studio/022.png"></p>
+<p>24  因为最终需要减弱到零，所以将最右边的控制点向下拖拽到最低处：</p>
+<p><img src="/img/fl-studio/023.png"></p>
+<p>25  可以调节中间的辅助控制点控制减弱的进度。下图中的效果是先迅速减弱然后慢慢淡出：</p>
+<p><img src="/img/fl-studio/024.png"></p>
+<h2 id="确定时间"><a href="#确定时间" class="headerlink" title="确定时间"></a>确定时间</h2><p>26  确定歌曲某个位置的时间有两种方法，一种是这个计时器，它指示你在音轨界面的时间轴上绿色小箭头所在的时间点。如果这个计时器显示的不是时间，右键点击它选择 Minute:Second:Millisecond 即可：</p>
+<p><img src="/img/fl-studio/025.png"></p>
+<p>27  或者将鼠标置于时间轴某个点上，这时软件左上角会指示当前位置/时间：</p>
+<p><img src="/img/fl-studio/026.png"></p>
+<h2 id="保存和导出"><a href="#保存和导出" class="headerlink" title="保存和导出"></a>保存和导出</h2><p>28  完成剪辑后，保存 FL Studio 的工程文件（后缀名 .fl）。</p>
+<p>29  然后导出音频文件。主菜单 FILE &gt; Export &gt; MP3 file 或快捷键 Shift + Ctrl/Command + R 可以导出 MP3 格式的音频：</p>
+<p><img src="/img/fl-studio/027.png"></p>
+<p>30  在弹出窗口中选择导出到的文件夹和歌曲名称：</p>
+<p><img src="/img/fl-studio/028.png"></p>
+<p>31  在弹出的导出选项窗口中点击「Start」，等待一段时间，窗口自动消失，此时可以在刚才选择的文件夹中找到导出的音频文件。</p>
+<p><img src="/img/fl-studio/029.png"></p>
 
         
         <br>
