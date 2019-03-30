@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买-VPS"><span class="toc-text">购买 VPS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote"><span class="toc-text">1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-购买-VPS"><span class="toc-text">1.2 购买 VPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-SSL-远程登陆服务器"><span class="toc-text">1.3 SSL 远程登陆服务器</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -137,7 +137,23 @@
 
     </div>
     <div class="post-content ">
-        
+        <h2 id="购买-VPS"><a href="#购买-VPS" class="headerlink" title="购买 VPS"></a>购买 VPS</h2><p><a href="https://baike.baidu.com/item/VPS/11053576?fr=aladdin" target="_blank" rel="noopener">VPS</a> (Vitual Private Server) 即虚拟专用服务器。相对于类似的选择「虚拟主机」，我选择 DigitalOcean VPS 只是因为我是通过 GitHub Student Pack 获得了 DigitalOcean 的 50 刀优惠。</p>
+<p><strong>Warning: 整个教程基于你已经获得了 GitHub Student Pack。</strong></p>
+<h3 id="1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote"><a href="#1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote" class="headerlink" title="1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote"></a>1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote</h3><p>1  访问 <a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Student Pack 链接</a>，点击「Get your Pack」按钮。</p>
+<p>2  在打开的网页中你可以看到所有可用的优惠包，选择其中的「DigitalOcean」，如果之前没有点开过的话，点击「your offer code」链接。网页刷新后再回到 DigitalOcean 处，点击「DigitalOcean Website」链接。</p>
+<p>3  在打开的 DigitalOcean 官网登陆页面，点击「Create your Account」，完成各注册步骤，注意填对邮箱。注册中你需要绑定信用卡或通过 PayPal 支付 5 美元。不要慌，有信用卡用信用卡，没有的话去 PayPal 官网注册一个账号，现在 PayPal 国区很好用。不过绑定银行卡似乎要求工行、建行、商行之一。</p>
+<p>4  注册成功后，在 DigitalOcean 的个人页面，在左边 Account -&gt; Billing 选项卡中将 GitHub Student Pack 的优惠码（Promo Code）输入到 Promo Code 一栏中。注意在此不要使用别的优惠码，否则会提示失效。如果已经提示失效，就需要向客服发送 ticket 说明情况。一般是能得到处理的。</p>
+<p>5  在你的主页上创建一个新项目，作为个人博客项目。你可以将它命名为你将要创建的博客的名字。</p>
+<h3 id="1-2-购买-VPS"><a href="#1-2-购买-VPS" class="headerlink" title="1.2 购买 VPS"></a>1.2 购买 VPS</h3><p>1  在 DigitalOcean 个人主页左边找到「Droplets」（就是 VPS），或者在你新项目的「Resources」页面点击「Add a Droplet」或其他类似的字眼。根据提示购买 VPS。</p>
+<p>2  购买 VPS 选择最便宜的 5 刀/月的即可。服务器选 San Fransisco 或 Singapore 在大陆相对稳定。系统镜像就新手而言推荐 Debian/Ubuntu。SSH 一栏先留空。</p>
+<p>3  通常支付是购买后按小时收费（？），而你的账户已经收到 GitHub Promo 的 50 刀余额，所以不用担心。</p>
+<p>3  你在注册 DigitalOcean 账号时填的邮箱会收到新 VPS 的 root 密码。若没有收到，你可以点击重新发送，也可以换一个邮箱，还可以先不管，之后在 Droplet 的详情页面更改 root 密码。</p>
+<h3 id="1-3-SSL-远程登陆服务器"><a href="#1-3-SSL-远程登陆服务器" class="headerlink" title="1.3 SSL 远程登陆服务器"></a>1.3 SSL 远程登陆服务器</h3><p>1  当你的 Droplet 已经部署好后，你可以点击个人主页左边的「Droplet」，点击刚创建的 Droplet 的<strong>名称</strong>。在打开的界面上你可以看到你的 Droplet 的 IPv4 地址，点击左边「Graphs」「Access」「Power」等一栏的「Access」。在「Console Access」一栏中，点击「Launch Console」，即可通过 DigitalOcean 平台直连你的 VPS 服务器。</p>
+<p>2  正常情况下若你的服务器 IP 没有被墙，过一段时间后会显示 <code>Login:</code> 提示符。如果很久没有出现，或右下角显示失败，则有可能是服务器 IP 被墙或网络不稳定。有时候就算成功登陆也会出现非常卡甚至掉线的情况，这时可以考虑删除 Droplet，重新添加一个 Droplet。你可以更换服务器所在地区。删除后添加 Droplet 不会扣掉一个月的费用。</p>
+<p>3  若你已经成功看到 <code>Login:</code> 提示符，输入账户名称 <code>root</code> 并回车，输入会有一定的延迟。然后输入 root 密码（很复杂）。</p>
+<p>4  若输入正确，控制台会输出欢迎信息，并出现类似于 <code>root@**Droplet 的名字**:/#</code> 的提示符，说明你已经成功登陆 VPS。</p>
+<p>5  这时你应该按照 <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-9" target="_blank" rel="noopener">DigitalOcean 的官方教程</a>进行新服务器的初始配置，比如创建 sudo 账户等。ufw 防火墙也请务必装上，之后会遇到。</p>
+
         
         <br>
         <div id="comment-container">
