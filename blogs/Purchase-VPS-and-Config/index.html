@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买-VPS"><span class="toc-text">购买 VPS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote"><span class="toc-text">1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-购买-VPS"><span class="toc-text">1.2 购买 VPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-SSL-远程登陆服务器"><span class="toc-text">1.3 SSL 远程登陆服务器</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买-VPS"><span class="toc-text">购买 VPS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote"><span class="toc-text">1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-购买-VPS"><span class="toc-text">1.2 购买 VPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-SSL-远程登陆服务器"><span class="toc-text">1.3 SSL 远程登陆服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-生成-Public-Private-Key-对并使用-Private-Key-登陆"><span class="toc-text">1.4 生成 Public/Private Key 对并使用 Private Key 登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-什么是密钥？有什么用？"><span class="toc-text">1.4.1 什么是密钥？有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-生成密钥对"><span class="toc-text">1.4.2 生成密钥对</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-拷贝公钥到服务器"><span class="toc-text">1.4.3 拷贝公钥到服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-配置-SSH-密钥验证登陆"><span class="toc-text">1.4.4 配置 SSH 密钥验证登陆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-配置-ufw-防火墙"><span class="toc-text">1.5 配置 ufw 防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-补充：查看日志"><span class="toc-text">1.6 补充：查看日志</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -137,22 +137,107 @@
 
     </div>
     <div class="post-content ">
-        <h2 id="购买-VPS"><a href="#购买-VPS" class="headerlink" title="购买 VPS"></a>购买 VPS</h2><p><a href="https://baike.baidu.com/item/VPS/11053576?fr=aladdin" target="_blank" rel="noopener">VPS</a> (Vitual Private Server) 即虚拟专用服务器。相对于类似的选择「虚拟主机」，我选择 DigitalOcean VPS 只是因为我是通过 GitHub Student Pack 获得了 DigitalOcean 的 50 刀优惠。</p>
+        <h2 id="购买-VPS"><a href="#购买-VPS" class="headerlink" title="购买 VPS"></a>购买 VPS</h2><p><a href="https://baike.baidu.com/item/VPS/11053576?fr=aladdin" target="_blank" rel="noopener">VPS</a> (Vitual Private Server) 即虚拟专用服务器。相对于类似的选择「虚拟主机」，我选择 DigitalOcean VPS 只是因为我是通过 GitHub Student Pack 获得了 DigitalOcean 的 50 刀优惠。但就中国大陆地区的访问速度而言，选择国外服务器还是 Vultr 的更好。</p>
 <p><strong>Warning: 整个教程基于你已经获得了 GitHub Student Pack。</strong></p>
+<div id="1-1"></div>
+
 <h3 id="1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote"><a href="#1-1-使用-GitHub-Student-Pack-获取-DigitalOcean-的-promote" class="headerlink" title="1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote"></a>1.1 使用 GitHub Student Pack 获取 DigitalOcean 的 promote</h3><p>1  访问 <a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Student Pack 链接</a>，点击「Get your Pack」按钮。</p>
-<p>2  在打开的网页中你可以看到所有可用的优惠包，选择其中的「DigitalOcean」，如果之前没有点开过的话，点击「your offer code」链接。网页刷新后再回到 DigitalOcean 处，点击「DigitalOcean Website」链接。</p>
-<p>3  在打开的 DigitalOcean 官网登陆页面，点击「Create your Account」，完成各注册步骤，注意填对邮箱。注册中你需要绑定信用卡或通过 PayPal 支付 5 美元。不要慌，有信用卡用信用卡，没有的话去 PayPal 官网注册一个账号，现在 PayPal 国区很好用。不过绑定银行卡似乎要求工行、建行、商行之一。</p>
+<p>2  在打开的网页中你可以看到所有可用的优惠包，选择其中的「DigitalOcean」，点击「your offer code」链接（如果之前没有点开过的话）。网页刷新后再回到 DigitalOcean 处，点击「DigitalOcean Website」链接。</p>
+<p>3  在打开的 DigitalOcean 官网登陆页面，点击「Create your Account」，完成各注册步骤，注意填对邮箱。注册中你需要绑定信用卡或通过 PayPal 支付 5 美元。不要慌，有信用卡用信用卡，没有的话去 PayPal 官网注册一个账号，现在 PayPal 国区很好用。不过绑定的银行卡似乎要求是工行、建行、商行之一。</p>
 <p>4  注册成功后，在 DigitalOcean 的个人页面，在左边 Account -&gt; Billing 选项卡中将 GitHub Student Pack 的优惠码（Promo Code）输入到 Promo Code 一栏中。注意在此不要使用别的优惠码，否则会提示失效。如果已经提示失效，就需要向客服发送 ticket 说明情况。一般是能得到处理的。</p>
 <p>5  在你的主页上创建一个新项目，作为个人博客项目。你可以将它命名为你将要创建的博客的名字。</p>
+<div id="1-2"></div>
+
 <h3 id="1-2-购买-VPS"><a href="#1-2-购买-VPS" class="headerlink" title="1.2 购买 VPS"></a>1.2 购买 VPS</h3><p>1  在 DigitalOcean 个人主页左边找到「Droplets」（就是 VPS），或者在你新项目的「Resources」页面点击「Add a Droplet」或其他类似的字眼。根据提示购买 VPS。</p>
-<p>2  购买 VPS 选择最便宜的 5 刀/月的即可。服务器选 San Fransisco 或 Singapore 在大陆相对稳定。系统镜像就新手而言推荐 Debian/Ubuntu。SSH 一栏先留空。</p>
+<p>2  购买 VPS 选择最便宜的 5 刀/月的即可。服务器选 San Francisco 或 Singapore 在大陆相对稳定，我一开始选了 San Francisco，后来换了 Singapore，比较稳定。系统镜像就新手而言推荐最新版的 Debian/Ubuntu，Debian 更纯净一些。SSH 一栏先留空。</p>
 <p>3  通常支付是购买后按小时收费（？），而你的账户已经收到 GitHub Promo 的 50 刀余额，所以不用担心。</p>
 <p>3  你在注册 DigitalOcean 账号时填的邮箱会收到新 VPS 的 root 密码。若没有收到，你可以点击重新发送，也可以换一个邮箱，还可以先不管，之后在 Droplet 的详情页面更改 root 密码。</p>
+<div id="1-3"></div>
+
 <h3 id="1-3-SSL-远程登陆服务器"><a href="#1-3-SSL-远程登陆服务器" class="headerlink" title="1.3 SSL 远程登陆服务器"></a>1.3 SSL 远程登陆服务器</h3><p>1  当你的 Droplet 已经部署好后，你可以点击个人主页左边的「Droplet」，点击刚创建的 Droplet 的<strong>名称</strong>。在打开的界面上你可以看到你的 Droplet 的 IPv4 地址，点击左边「Graphs」「Access」「Power」等一栏的「Access」。在「Console Access」一栏中，点击「Launch Console」，即可通过 DigitalOcean 平台直连你的 VPS 服务器。</p>
 <p>2  正常情况下若你的服务器 IP 没有被墙，过一段时间后会显示 <code>Login:</code> 提示符。如果很久没有出现，或右下角显示失败，则有可能是服务器 IP 被墙或网络不稳定。有时候就算成功登陆也会出现非常卡甚至掉线的情况，这时可以考虑删除 Droplet，重新添加一个 Droplet。你可以更换服务器所在地区。删除后添加 Droplet 不会扣掉一个月的费用。</p>
-<p>3  若你已经成功看到 <code>Login:</code> 提示符，输入账户名称 <code>root</code> 并回车，输入会有一定的延迟。然后输入 root 密码（很复杂）。</p>
-<p>4  若输入正确，控制台会输出欢迎信息，并出现类似于 <code>root@**Droplet 的名字**:/#</code> 的提示符，说明你已经成功登陆 VPS。</p>
-<p>5  这时你应该按照 <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-9" target="_blank" rel="noopener">DigitalOcean 的官方教程</a>进行新服务器的初始配置，比如创建 sudo 账户等。ufw 防火墙也请务必装上，之后会遇到。</p>
+<p>3  若你已经成功看到 <code>Login:</code> 提示符，输入账户名称 <code>root</code> 并回车，输入会有一定的延迟。然后输入 root 密码（很复杂，但可以直接 Ctrl+C Ctrl+V 粘贴过去，只在 Windows 上试过）。</p>
+<p>4  若输入正确，控制台会输出欢迎信息，并出现类似于 <code>root@[Droplet名字]:/#</code> 的提示符，说明你已经成功登陆 VPS。</p>
+<p>5  这时你应该按照 <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-9" target="_blank" rel="noopener">DigitalOcean 的官方教程</a> 进行新服务器的初始配置，比如创建 sudo 账户等。ufw 防火墙也请务必装上，之后会用到。</p>
+<div id="1-4"></div>
+
+<h3 id="1-4-生成-Public-Private-Key-对并使用-Private-Key-登陆"><a href="#1-4-生成-Public-Private-Key-对并使用-Private-Key-登陆" class="headerlink" title="1.4 生成 Public/Private Key 对并使用 Private Key 登陆"></a>1.4 生成 Public/Private Key 对并使用 Private Key 登陆</h3><p>这一步不是必要的，但如果你不想每次登陆都输入密码（以及提高安全性），就应该学会使用密钥验证（Key Authentication）登陆。</p>
+<h4 id="1-4-1-什么是密钥？有什么用？"><a href="#1-4-1-什么是密钥？有什么用？" class="headerlink" title="1.4.1 什么是密钥？有什么用？"></a>1.4.1 什么是密钥？有什么用？</h4><p>密钥（secret key）本指加密中使用的一串密码，在 SSH 登陆中，密钥通常指的是 <a href="https://baike.baidu.com/item/RSA%E7%AE%97%E6%B3%95/263310?fr=aladdin" target="_blank" rel="noopener">RSA 算法</a>所需的一对公钥/私钥对（public/private key pair）。公钥放在需要远程登陆上的服务器（SSH 服务器），私钥放在所有想要登陆服务器的设备（SSH 客户端）。连接服务器时，若服务器允许密钥登陆，SSH 客户端会接受服务器发送过来的随机字节串，并在本地用私钥加密后发回服务器。若私钥正确，服务器用公钥解密后能够得到原来的随机字节串，就自动验证了登陆者的身份。由于密钥很长，直接破解很难，所以只要能保证私钥的安全，用密钥登陆是很安全的。</p>
+<p><img src="/img/build-server/ssh-authen.png"></p>
+<p>进行以下操作前，你要确保服务器上已经安装 OpenSSH 服务器。在 Debian/Ubuntu 下，可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-2-生成密钥对"><a href="#1-4-2-生成密钥对" class="headerlink" title="1.4.2 生成密钥对"></a>1.4.2 生成密钥对</h4><h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><p>Windows 下，你可以用 PuTTY 这个 SSH 客户端生成密钥对。但这种方法仅限于你使用 PuTTY 来登陆服务器，因为 PuTTY 生成的私钥格式和 OpenSSH 不同。因此，更推荐的方式是使用 Windows 下的 bash 来生成，例如 Git bash 和 WSL（Windows Sub-Linux）。下面以 Git bash 为例，使用 WSL 基本相同。如果没有安装 Git，请在 <a href="https://www.git-scm.com/download/win" target="_blank" rel="noopener">这里</a> 下载安装。</p>
+<p>打开 Git bash。注意，<strong>如果你之前没有生成过密钥文件，使用以下命令会导致文件被覆盖</strong>。使用 ssh-keygen 生成密钥对：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your-email@***&quot;</span><br></pre></td></tr></table></figure>
+<p>用你的邮箱替代上述命令的 <code>your-email@***</code>。运行之后会在 <code>~/.ssh</code> 目录生成公/私钥文件。使用以下命令切换到该目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>然后你可以用 <code>ls</code> 查看生成的密钥文件名。通常，它们应该是 <code>id_rsa</code> 和 <code>id_rsa.pub</code>，分别对应私钥文件和公钥文件。</p>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><p>一般而言 Linux 发行版自带 OpenSSH 客户端，如果没有，可以用以下命令安装（Debian/Ubuntu）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get openssh-client</span><br></pre></td></tr></table></figure>
+<p>然后用 <code>ssh-keygen</code> 生成，步骤与 Windows 相同。</p>
+<p>Macintosh</p>
+<p>Mac 似乎是自带 OpenSSH 的，同样在终端下使用 <code>ssh-keygen</code> 即可，步骤与 Windows 相同。</p>
+<h4 id="1-4-3-拷贝公钥到服务器"><a href="#1-4-3-拷贝公钥到服务器" class="headerlink" title="1.4.3 拷贝公钥到服务器"></a>1.4.3 拷贝公钥到服务器</h4><p>生成密钥对后你需要将 id_rsa.pub 的内容上传到服务器。有以下几种方法：</p>
+<ol>
+<li><p>使用 <code>scp</code> 命令（最推荐）</p>
+<p>在 Git bash 中，如前所述切换到 <code>~/.ssh</code> 目录后，用 <code>scp</code> 命令直接将 <code>id_rsa.pub</code> 文件拷贝到服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp id_rsa.pub [username]@[hostname]:~</span><br></pre></td></tr></table></figure>
+<p>以上命令中，<code>[username]</code> 是你在远程服务器上的用户名（最好不要用 <code>root</code> 用户），<code>[hostname]</code> 是你的远程服务器的 IP 地址或域名。现在我们还没有绑定域名，所以要使用 DigitalOcean 给出的 IP 地址。你可以在 <a href="https://cloud.digitalocean.com/projects" target="_blank" rel="noopener">DigitalOcean Control Panel</a>  -&gt; Droplets 中看到你的 Droplet 的 IP 地址。例如，用户名为 <code>myusername</code>，IP 地址为 <code>123.123.123.123</code>，则命令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp id_rsa.pub myname@123.123.123.123:~</span><br></pre></td></tr></table></figure>
+<p>这条命令会将 id_rsa.pub 文件拷贝到你的服务器 <code>myusername</code> 用户的 <code>~</code> 目录下。如果使用 <code>root</code> 用户，则会拷贝到 <code>/root</code> 目录（Debian/Ubuntu）。命令执行过程中，如果无法连接，很有可能是 DigitalOcean 的网络连接不稳定，你可以切换成手机移动网络（校园网有可能屏蔽 DigitalOcean 的 IP）。如果连接正常，你会被要求输入 <code>myusername</code> 用户的密码。之后，一个进度条会显示拷贝的进度。拷贝完成后就可以在服务器上述目录下看到 id_rsa.pub 文件了。</p>
+</li>
+<li><p>暴力复制粘贴法（不建议使用）</p>
+<p>在 Git bash 中使用你熟悉的命令行编辑器，或在 Windows 资源管理器中打开 <code>C:\Users\你的用户名\.ssh</code> 文件夹，用记事本或其他代码编辑器打开 id_rsa.pub 文件，Ctrl+C 复制，然后在 DigitalOcean 的 Web Console 或 SSH 命令行中 Ctrl+V 粘贴到打开的编辑器中，保存为任意文件名。</p>
+<p>这种方法很可能在粘贴的时候数据出错，不建议使用。</p>
+</li>
+<li><p>使用第三方平台传送</p>
+<p>在 GitHub 新建一个 repo，上传你的 id_rsa.pub 文件，然后在服务器中 git clone，最后删掉这个 repo。</p>
+<p>除非服务器无法用 <code>scp</code> 拷贝，否则不必采用此法。</p>
+</li>
+</ol>
+<h4 id="1-4-4-配置-SSH-密钥验证登陆"><a href="#1-4-4-配置-SSH-密钥验证登陆" class="headerlink" title="1.4.4 配置 SSH 密钥验证登陆"></a>1.4.4 配置 SSH 密钥验证登陆</h4><p>成功将 id_rsa.pub 拷贝到服务器上后，我们需要进行一些配置让它生效。首先，进入服务器你以后要远程登陆的用户的 home 文件夹。如果你只创建了一个除 <code>root</code> 用户以外的用户，需要让这个用户拥有 <code>sudo</code> 权限。下面仍以 <code>myusername</code> 为例。</p>
+<p>进入服务器，用 <code>myusername</code> 用户登陆。在 <code>~</code> 目录下你应看到刚才拷贝过来的 id_rsa.pub 文件。将它拷贝到 <code>~/.ssh</code> 目录下，如果没有就创建一个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp id_rsa.pub ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>进入 <code>~/.ssh</code> 目录，如果你之前没有在这里放置过公钥，直接将 id_rsa.pub 更名为 authorized_keys 即可。如果已经有 authorized_keys 文件，使用 <code>cat</code> 命令将新公钥文件连接到前面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+<p>注意 id_rsa.pub 文件必须只有一行，不能有多余的空行。为了保证不出错，你可以打开 authorized_keys 文件查看，如有空行将其删除。</p>
+<p>然后我们进入 <code>/etc/ssh</code> 目录配置 SSH 服务端 daemon 程序。用你喜欢的编辑器打开 <code>/etc/ssh/sshd_config</code>。我们需要关注以下行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Port 22</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">PermitEmptyPassword no</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">PermitRootLogin yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p># 开头的是注释。以上是默认配置，如果没有请取消注释或手动打上。目前，我们还没有验证密钥登陆是否可以成功，所以要允许 <code>PasswordAuthentication</code>（密码认证登陆）。<code>PermitRootLogin</code> （允许用 root 用户登陆）可以设置为 <code>no</code>，只要你已经有了 <code>sudo</code> 用户。<code>PubkeyAuthentication</code>（公钥认证登陆）必须设置为 <code>yes</code>。</p>
+<p>配置好后，用 <code>sudo service sshd restart</code> 重启 sshd（ssh daemon），然后在有 SSH 客户端的终端（如 Git bash）中用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh myusername@123.123.123.123</span><br></pre></td></tr></table></figure>
+<p>尝试登陆远程服务器。如果这时已经不提示输入密码直接登陆，说明密钥登陆配置已经成功。若失败，可用 <code>ssh -v</code> 或 <code>ssh -vvv</code> 参数追踪问题。成功登陆后，你可以禁用 <code>PasswordAuthentication</code> 来防止攻击者破解安全性更低的密码。此外，最好设置 <code>Port 22</code> 为其他大于 <code>1023</code> 的端口，减少一般的肉鸡搜索程序不断骚扰你的服务器，否则你的日志会疯狂增大。更改端口后，SSH 登陆你的服务器要加 <code>-p</code> 参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p [你设置的端口号] myusername@123.123.123.123</span><br></pre></td></tr></table></figure>
+<p>之后，就可以一直使用密钥验证登陆了。在不同的客户端下，你可以使用相同的密钥，也可以另行创建一对公/私钥。将新的公钥上传到服务器，用 <code>cat</code> 将其添加到 authorized_key 文件前面（见上方）。</p>
+<div id="1-5"></div>
+
+<h3 id="1-5-配置-ufw-防火墙"><a href="#1-5-配置-ufw-防火墙" class="headerlink" title="1.5 配置 ufw 防火墙"></a>1.5 配置 ufw 防火墙</h3><p>在配置好登陆服务器的方法后，为了进一步增加安全性，DigitalOcean 建议我们使用 ufw 防火墙。</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ufw</span><br></pre></td></tr></table></figure>
+<p>ufw 指 Ubuntu Firewall。防火墙的原理是屏蔽或允许特定 IP 地址、端口进入或流出。比如，我们通过 SSH 登陆服务器必须允许流量从我们设置的 SSH 登陆端口进入。所有 ufw 允许配置的服务可以用以下命令查看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw app list</span><br></pre></td></tr></table></figure>
+<p>允许某一端口流出流量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow out [PORT]</span><br></pre></td></tr></table></figure>
+<p>允许某一端口流入流量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow [in] [PORT]</span><br></pre></td></tr></table></figure>
+<p>允许流入可以省略 <code>in</code>。我们需要首先允许之前在 sshd_config 中设置的 SSH 登陆端口（例如 22）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 22</span><br></pre></td></tr></table></figure>
+<p><strong>22 是 SSH 的默认端口，如果已经改过就要用改过的端口。</strong></p>
+<p>因为我们将要搭建博客，所以还要允许 HTTP 和 HTTPS 端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 80</span><br><span class="line">sudo ufw allow 443</span><br></pre></td></tr></table></figure>
+<p>完成后，运行防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw enable</span><br></pre></td></tr></table></figure>
+<p>关闭防火墙使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw disable</span><br></pre></td></tr></table></figure>
+<p>运行时，防火墙配置可以用以下命令查看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+<p>如果你需要通过其他端口访问服务器，如 FTP 端口，你可以自己任意配置。</p>
+<div id="1-6"></div>
+
+<h3 id="1-6-补充：查看日志"><a href="#1-6-补充：查看日志" class="headerlink" title="1.6 补充：查看日志"></a>1.6 补充：查看日志</h3><p>维护服务器安全性的一个重要方法即是查看日志。关于登陆认证和授权的日志是 <code>/var/log</code> 目录下的 <code>auth.log</code> 系列文件。查看它默认需要 root 权限。如果你的服务器 SSH 端口设置为默认的 22，你很可能在 <code>auth.log</code> 里看到大量的 <code>Invalid username xxx</code> 信息。这是肉鸡软件在随机猜测你的用户名。不用惊慌，只要你的用户名不是“Top 1000 Username”里常见的用户名且密码不是“Top 10000 Password”里面的简单密码就行。你只需要用自己的名字加一点别的东西就可以创建一个比较难猜的用户名，密码设置得强度高一点就行了。你甚至可以禁用密码登陆让想要暴力破解密码的人根本没有机会。但如果不更改默认 22 端口，你的日志还是会疯狂增长，所以更改端口是很有必要的。</p>
+<p>平常，你可以定时查看日志，检查是否有奇怪的 IP 地址成功登陆你的服务器。有的话就比较恐怖了。对于这种数以千行计的日志文件，使用 grep 是比较好的选择。成功登陆的日志是什么样子，你可以在自己成功登陆后立即查看日志，查找含有 <code>success</code> 的条目。最新添加的日志在文件最末尾。</p>
+<hr>
+<p><strong>Have a Ruthastic Day!</strong></p>
 
         
         <br>
